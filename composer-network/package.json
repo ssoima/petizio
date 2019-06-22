@@ -8,6 +8,8 @@
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/petizio.bna",
     "pretest": "npm run lint",
+    "publish": "composer network install --card PeerAdmin@hlfv1 --archiveFile dist/petizio.bna",
+
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"
   },
