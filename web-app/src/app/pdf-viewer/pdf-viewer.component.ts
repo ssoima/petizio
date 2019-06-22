@@ -1,6 +1,6 @@
 import { Component, OnInit, Sanitizer, Input } from '@angular/core';
 import { Location } from '@angular/common'; 
-import { Company } from '../org.auditchain';
+import { Petition } from '../org.petiziochain';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -14,11 +14,11 @@ import { environment } from '../../environments/environment'
 })
 
 /*
-The component Responsible for viewing the audit or the certificate
+The component Responsible for viewing the signature or the certificate
 */
 
 export class PdfViewerComponent implements OnInit {
-   @Input() company: Company;
+   @Input() company: Petition;
    public sub: Observable<string>;
    public path : string;
    public type: string;

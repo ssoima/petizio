@@ -5,12 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { CompaniesPageComponent } from './companies-page/companies-page.component';
-import { CompanyCardComponent } from './company-card/company-card.component';
+import { PetitionsPageComponent } from './petitions-page/petitions-page.component';
+import { PetitionCardComponent } from './petition-card/petition-card.component';
 import { SearchboxComponent } from './searchbox/searchbox.component';
-import { CompanyProfilePageComponent } from './company-profile-page/company-profile-page.component';
-import { CompanyProfileHeaderComponent } from './company-profile-header/company-profile-header.component';
-import { CompanyProfileAuditComponent } from './company-profile-audit/company-profile-audit.component';
+import { PetitionProfilePageComponent } from './petition-profile-page/petition-profile-page.component';
+import { PetitionProfileHeaderComponent } from './petition-profile-header/petition-profile-header.component';
+import { PetitionProfileSignComponent } from './petition-profile-sign/petition-profile-sign.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
 import { DataService } from './data.service';
@@ -26,16 +26,18 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 
+
 @NgModule({
   declarations: [
+
     AppComponent,
     HeaderComponent,
-    CompaniesPageComponent,
-    CompanyCardComponent,
+    PetitionsPageComponent,
+    PetitionCardComponent,
     SearchboxComponent,
-    CompanyProfilePageComponent,
-    CompanyProfileHeaderComponent,
-    CompanyProfileAuditComponent,
+    PetitionProfilePageComponent,
+    PetitionProfileHeaderComponent,
+    PetitionProfileSignComponent,
     PdfViewerComponent,
     UploadFileComponent,
     CompanyProfileCertificateComponent,

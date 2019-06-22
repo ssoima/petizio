@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="signatureDetails">
+    <div class="title">
+      <p>{{signature.name}}</p>
+    </div>
+    <div class="releaseDate">
+      <p>{{signature.release | timeAgo}}</p>
+    </div>
+    <div class="giveSignature" *ngIf="signature.hasBusinessRelation">
+      <button *ngIf="!alreadySigned && !signature.created" type="button" class="btn btn-success btn-s" (click)="giveSignature()" >
+        Sign
+      </button>
+      <button *ngIf= "!signature.created" type="button" class="btn btn-s">
+        Signed!
+    </button> 
+      </div>
+    <div class="rating" style="display: flex; flex-direction: row-reverse" value ="getPetitionRating()">
+      <petizio-star-rating *ngIf="signature.hasBusinessRelation" [auditChecksum]= "signature.checksum" [comment] = "questionComment" [starsCount] = "rating" [readonly] = "false"></petizio-star-rating>
+    </div>
+  </div>
+</div>

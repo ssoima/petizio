@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { CompaniesPageComponent } from '../companies-page/companies-page.component';
+import { PetitionsPageComponent } from '../petitions-page/petitions-page.component';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'auditchain-searchbox',
+  selector: 'petizio-searchbox',
   templateUrl: './searchbox.component.html',
   styleUrls: ['./searchbox.component.scss']
 })
 
 /**
- * the component responsible for the searchbox in the top of the main/companies page
+ * the component responsible for the searchbox in the top of the main/petitions page
  */
 export class SearchboxComponent implements OnInit {
 
   listFilter: string = this._CompaniesPageComponent.listFilter;
 
-  constructor(private _CompaniesPageComponent: CompaniesPageComponent) { }
+  constructor(private _CompaniesPageComponent: PetitionsPageComponent) { }
 
   ngOnInit() {
   }

@@ -8,7 +8,7 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 import { environment } from '../../environments/environment';
 
 
-const auditUploudURL = "http://localhost:"+ environment.restAPIport +"/api/v0/assets/audit";
+const auditUploudURL = "http://localhost:"+ environment.restAPIport +"/api/v0/assets/signature";
 const certificateUploudURL = "http://localhost:"+ environment.restAPIport +"/api/v0/assets/certificate";
 
 @Component({
@@ -26,7 +26,7 @@ export class UploadFileComponent implements OnInit {
   companyName: String;
   companyId: String;
   companyBCDBPubKey: string;
-  fileType: String; //Audit or Certificate
+  fileType: String; //Signature or Certificate
   
   constructor(private _route: ActivatedRoute, public dialogRef: MatDialogRef<UploadFileComponent>,
     private _router: Router, private _DataService: DataService,
@@ -37,14 +37,14 @@ export class UploadFileComponent implements OnInit {
     //This is the default title property created by the angular cli. Its responsible for the app works 
     ngOnInit() {
 
-      //retrieving company details
+      //retrieving petition details
       this.companyName= this.data.companyName;
       this.companyId = this.data.companyId;
       this.fileType = this.data.fileType;
       this.companyBCDBPubKey = this.data.companyBCDBPubKey;
       console.log("username: "+environment.userName);
       console.log("companyname: "+this.companyName);
-      if (this.fileType == 'Audit')
+      if (this.fileType == 'Signature')
         this.uploader = new FileUploader({url: auditUploudURL, method: "POST", itemAlias: 'pdf',additionalParameter:{bigchainPublicKey:this.companyBCDBPubKey}});
 
       else if (this.fileType == 'Certificate'){

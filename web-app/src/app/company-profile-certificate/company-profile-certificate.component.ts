@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Company, Certificate } from '../org.auditchain';
+import { Petition, Certificate } from '../org.petiziochain';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 
@@ -11,7 +11,7 @@ import { DataService } from '../data.service';
 export class CompanyProfileCertificateComponent implements OnInit {
 
   @Input() certificate: Certificate;
-  @Input() company: Company;
+  @Input() company: Petition;
   
   constructor(private _router: Router, private _DataService: DataService) { }
 

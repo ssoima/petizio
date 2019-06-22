@@ -1,37 +1,37 @@
-export class Company {
+export class Petition {
     id: string; //the ownerPubKey key thing
     name: string;
     description: string;
     logo: string; //pathfornow
-    ownerPubKey: string;
-    businessRelation: string;
+    numberSignatures: string;
 
-    constructor (id, name, description, logo, ownerPubKey, businessRelation){
+    constructor (id, name, description, logo, numberSignatures){
         this.id = id;
         this.name = name;
         this.description = description;
         this.logo = logo;
-        this.ownerPubKey = ownerPubKey;
-    	this.businessRelation = businessRelation;
+        this.numberSignatures = numberSignatures;
+
+
     }
 }
 
-export class Audit{
-    id: number; //asset ID of the Audit
+export class Signature{
+    id: number; //asset ID of the Signature
     name: string;
     release: Date;
     checksum: string;
-    ownerId: string; // id of the company that owns the audit
-    acquired: boolean;
-    created: boolean;
+    ownerId: string; // id of the petition that owns the signature
+    signerId: string; // signer's id
+  created: boolean;
     hasBusinessRelation: boolean;
-    constructor (id, name, release, checksum, ownerId, acquired, created, hasBusinessRelation){
+    constructor (id, name, release, checksum, ownerId, signerId, created, hasBusinessRelation){
         this.id = id;
         this.name = name;
         this.release = release;
         this.checksum = checksum;
         this.ownerId = ownerId; //ownerpubkey
-        this.acquired = acquired;
+        this.signerId = signerId; //signerpubkey
 	this.created = created;
 	this.hasBusinessRelation = hasBusinessRelation;
     }

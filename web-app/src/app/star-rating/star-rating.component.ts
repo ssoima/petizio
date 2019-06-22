@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {RatingModule} from "ngx-rating";
-import { CompanyProfileAuditComponent } from '../company-profile-audit/company-profile-audit.component';
+import { PetitionProfileSignComponent } from '../petition-profile-sign/petition-profile-sign.component';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'auditchain-star-rating',
+  selector: 'petizio-star-rating',
   templateUrl: './star-rating.component.html',
   styleUrls: ['./star-rating.component.scss'],
 })
@@ -24,14 +24,14 @@ export class StarRatingComponent implements OnInit {
 
   /*
   called whenever a star is clicked to update the ratings
-  calls the rateAuditAPI to update the rating for an audit
+  calls the rateAuditAPI to update the rating for an signature
   */
   updateRating(){
     if (this.comment == null){
       alert("enter a comment first");
       return;
     }
-    this._DataService.rateAuditAPI(this.auditChecksum, this.starsCount, this.comment);
+    this._DataService.ratePetitionAPI(this.auditChecksum, this.starsCount, this.comment);
   }
 
 }

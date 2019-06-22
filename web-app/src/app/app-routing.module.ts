@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CompaniesPageComponent} from './companies-page/companies-page.component';
-import {CompanyProfilePageComponent} from './company-profile-page/company-profile-page.component';
+
+import {PetitionsPageComponent} from './petitions-page/petitions-page.component';
+import {PetitionProfilePageComponent} from './petition-profile-page/petition-profile-page.component';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 
 const routes: Routes = [
-  { path: 'companies', component: CompaniesPageComponent},
-  { path: 'company', component: CompanyProfilePageComponent},
-  { path: 'company/:id', component: CompanyProfilePageComponent},
+  { path: 'petitions', component: PetitionsPageComponent},
+  { path: 'petition', component: PetitionProfilePageComponent},
+  { path: 'petition/:id', component: PetitionProfilePageComponent},
   { path: 'pdfviewer', component: PdfViewerComponent},
   { path: 'uploadAudit/:name/:id', component: UploadFileComponent},
-  { path: '', redirectTo: '/companies', pathMatch: 'full'}
+  { path: '', redirectTo: '/petitions', pathMatch: 'full'}
 ];
 
 @NgModule({
