@@ -1,21 +1,43 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<petizio-star-rating></petizio-star-rating>
+
+
 <div class="card">
-  <div class="signatureDetails">
-    <div class="title">
-      <p>{{signature.name}}</p>
+  <div>
+    <div>
+      <p>Sign this petition with your eID</p>
     </div>
-    <div class="releaseDate">
-      <p>{{signature.release | timeAgo}}</p>
-    </div>
-    <div class="giveSignature" *ngIf="signature.hasBusinessRelation">
-      <button *ngIf="!alreadySigned && !signature.created" type="button" class="btn btn-success btn-s" (click)="giveSignature()" >
-        Sign
-      </button>
-      <button *ngIf= "!signature.created" type="button" class="btn btn-s">
+    <div>
+<!--
+      <form *ngIf="!signature.created" >
+-->
+      <form>
+        <div class="form-group">
+          <label for="example_eID">Your Personal eID</label>
+          <input type="text" class="form-control" id="example_eID" aria-describedby="eID_Help" placeholder="eID77777XXXXX">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="example_Key">Your Private Key</label>
+          <input type="password" class="form-control" id="example_Key" placeholder="xxxxxxx7777777">
+        </div>
+        <br>
+        <button  type="button" class="btn btn-success btn-s" (click)="giveSignature()">
+          Sign</button>
+      </form>
+
+
+      <button *ngIf= "signature.created" type="button" class="btn btn-primary">
         Signed!
-    </button> 
+      </button>
       </div>
     <div class="rating" style="display: flex; flex-direction: row-reverse" value ="getPetitionRating()">
+<!--
       <petizio-star-rating *ngIf="signature.hasBusinessRelation" [auditChecksum]= "signature.checksum" [comment] = "questionComment" [starsCount] = "rating" [readonly] = "false"></petizio-star-rating>
+-->
+
     </div>
   </div>
 </div>
