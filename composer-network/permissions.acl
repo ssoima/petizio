@@ -76,25 +76,25 @@
 
 rule EverybodyCanReadEverything {
     description: "Allow all participants read access to all resources"
-    participant: "org.petizio.com.SampleParticipant"
+    participant: "org.petizio.petition.SampleParticipant"
     operation: READ
-    resource: "org.petizio.com.*"
+    resource: "org.petizio.petition.*"
     action: ALLOW
 }
 
 rule EverybodyCanSubmitTransactions {
     description: "Allow all participants to submit transactions"
-    participant: "org.petizio.com.SampleParticipant"
+    participant: "org.petizio.petition.SampleParticipant"
     operation: CREATE
-    resource: "org.petizio.com.SampleTransaction"
+    resource: "org.petizio.petition.SampleTransaction"
     action: ALLOW
 }
 
 rule OwnerHasFullAccessToTheirAssets {
     description: "Allow all participants full access to their assets"
-    participant(p): "org.petizio.com.SampleParticipant"
+    participant(p): "org.petizio.petition.SampleParticipant"
     operation: ALL
-    resource(r): "org.petizio.com.SampleAsset"
+    resource(r): "org.petizio.petition.SampleAsset"
     condition: (r.owner.getIdentifier() === p.getIdentifier())
     action: ALLOW
 }
