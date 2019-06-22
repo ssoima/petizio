@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="auditDescription">
+    <div class="title">
+      <p>{{audit.name}}</p>
+    </div>
+    <div class="releaseDate">
+      <p>{{audit.release | timeAgo}}</p>
+    </div>
+    <div class="buyAudit" *ngIf="audit.hasBusinessRelation">
+      <button *ngIf="!auditPending && !audit.created && !audit.acquired" type="button" class="btn btn-success btn-s" (click)="buyAudit()" >
+          Buy
+      </button>
+      <button *ngIf= "audit.created || audit.acquired" type="button" class="btn btn-s" (click)="viewAudit()">
+          View
+      </button> 
+      <button *ngIf= "auditPending && !audit.created && !audit.acquired" type="button" class="btn btn-s">
+        Pending ...
+    </button> 
+      </div>
+    <div class="rating" style="display: flex; flex-direction: row-reverse" value ="getAuditRating()">
+      <auditchain-star-rating *ngIf="audit.hasBusinessRelation && audit.acquired" [auditChecksum]= "audit.checksum" [comment] = "questionComment" [starsCount] = "rating" [readonly] = "false"></auditchain-star-rating>
+    </div>
+  </div>
+  <div class="auditComments">
+      <ul>
+          <!-- New comment input -->
+          <li *ngIf="audit.hasBusinessRelation && audit.acquired">
+            <input class="comment-input" placeholder="Give a rating ..." type="text" pInputText [(ngModel)]="questionComment"/>
+          </li>
+          <li *ngIf="!showComment" class="comment-input">
+            <p (click)="showCommentOnClick()" style="text-align: center; color: blue; cursor: pointer;"> Show Comments...</p>
+          </li>
+          <!-- comments -->
+          <div *ngIf="showComment">
+          <li *ngFor="let comment of comments; let commIndex = index">
+          <hr>
+            <div style="display: flex; justify-content: space-between; padding-right: 40px">
+              <p class="comment">{{comment.comment}}</p>
+              <auditchain-star-rating style="align-self: center" [starsCount] = "comment.mark" [readonly] = "true"></auditchain-star-rating>
+          </div>
+
+          </li>  
+        </div>
+      </ul>
+  </div>
+</div>

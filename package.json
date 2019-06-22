@@ -1,0 +1,19 @@
+{
+  "name": "auditchain",
+  "version": "1.0.0",
+  "scripts": {
+    "install-all": "npm i --prefix bigchaindb-network && npm i --prefix composer-network && npm i --prefix rest-api && npm i --prefix web-app",
+    "resetBusinessNetwork": "npm run setupStorageDirs && npm run --prefix composer-network resetBusinessNetwork",
+    "setupStorageDirs": "mkdir -p rest-api/assets/audits/acquired && mkdir -p rest-api/assets/audits/created && mkdir -p rest-api/assets/certificates/ && rm -rf rest-api/assets/audits/acquired/* rest-api/assets/audits/created/* rest-api/assets/certificates/* && mkdir -p maps && rm -rf maps/* && mkdir -p keys && rm -rf keys/*",
+    "cleanupCardMappings": "mkdir -p maps && rm -rf maps/*",
+    "startBusinessNetwork": "mkdir -p maps && rm -rf maps/* && npm run --prefix composer-network startBusinessNetwork",
+    "compileBusinessNetwork": "npm run --prefix composer-network compileBusinessNetwork",
+    "lint": "",
+    "lint-fix": ""
+  },
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "time-ago-pipe": "^1.3.2"
+  }
+}

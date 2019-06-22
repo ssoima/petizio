@@ -1,0 +1,22 @@
+<auditchain-company-profile-header [company]= "company"></auditchain-company-profile-header>
+
+<div class="content">
+  <div>
+    <h2 style='display:inline-block;'>Audits </h2> 
+    <div style='display:inline-block;'>
+        <button *ngIf = "company.name != userName && company.businessRelation == 'Supplier'" (click)="upload('Audit')" class="w3-button w3-circle w3-teal upload-button" style="font:40px; font-weight: 2000">+</button>
+      </div>
+    <hr>
+    <auditchain-company-profile-audit *ngFor='let audit of audits' [audit]= "audit" [company]= "company"></auditchain-company-profile-audit>
+  </div>
+  <div style="margin-top: 10px">
+    <h2 style='display:inline-block;margin-right:1300px'>Certificates</h2>
+    <div style='display:inline-block;'>
+        <button *ngIf = "company.name == userName" (click)="upload('Certificate')" class="w3-button w3-circle w3-teal upload-button">+</button>
+    </div>
+  
+  </div>
+  <hr>
+  <auditchain-company-profile-certificate *ngFor='let certficate of certificates' [certificate]= "certficate" [company]= "company"></auditchain-company-profile-certificate>
+
+</div>

@@ -1,0 +1,65 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  background-color: #59A17F;
+  height: 80px;
+  padding: 0;
+  //padding: 20px 10px;
+}
+
+.logo {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  fill: white;
+  margin-top: -25px; /* Half the height */
+  margin-left: auto;
+  margin-right:auto;
+  transform: translate(-50%, 0);
+}
+
+.image_container {
+  width: 300px;
+  height: 300px;
+  background: #eee;
+  text-align: center;
+  line-height: 300px;
+}
+
+.image_container img {
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+  text-decoration: none; /* no underline */
+}
+.back_button{
+  position: absolute;
+  left:0;
+  top:0;
+  padding-top: 40px;
+  padding-left: 50px;
+  display: none;
+  height: 50px;
+  fill: white;
+  margin-top: -25px; /* Half the height */
+  margin-left: auto;
+  margin-right:auto;
+  transform: translate(-50%, 0);
+}
+
+.userLogo {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  height: 56px;
+  width: 66px;
+  border: 2px solid white;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 40px;
+  line-height: 60px;
+}

@@ -1,0 +1,105 @@
+.card {
+  box-shadow: 0px 1px 20px 0 rgba(0,0,0,0.3);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  width: 95%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px
+}
+.auditDescription {
+  display: flex;
+}
+.auditComments {
+}
+.comment-input {
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 60%;
+}
+
+.buyAudit {
+  align-self: center;
+}
+
+hr {
+  border-color: rgba(144,218,197, 0.25);
+  margin-top: 17px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+ul {
+  padding: 0;
+}
+
+.comment {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+li {
+  list-style: none;
+}
+.comment-input {
+  padding: 0;
+}
+
+.title {
+  flex-grow: 5;
+  padding-left: 10px;
+  align-self: center;
+}
+.releaseDate {
+  flex-grow: 2;
+  align-self: center;
+}
+
+
+.rating {
+  flex-grow: 1;
+  align-self: center;
+}
+
+.btn {
+  color: #59A17F; 
+  background: transparent; 
+  border: 2px solid #59A17F;
+  border-radius: 6px; 
+
+      color: black;
+      padding: 7px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #59A17F;
+  color: white;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 1px 30px 0 rgba(0,0,0,0.4);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 8px 16px 2px 16px;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 10px 25px;
+  width: 180px;
+  height: 180px;
+}

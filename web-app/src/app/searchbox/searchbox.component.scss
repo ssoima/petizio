@@ -1,0 +1,29 @@
+.form-group {
+  margin:0;
+  padding:20px ;
+
+  &:first-child { border-color: transparent; }
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.form-control {
+  display: block;
+  padding: 0px 10px 0 20px;
+  margin: 25px auto;
+  color: #0A3A2A;
+  font-size: 16px;
+  border: 3px solid #0A3A2A;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  min-height:40px;
+  height: auto;
+  width: 60%;
+  border-radius: 50px 50px 50px 50px !important;
+}
+.form-control :focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: transparent;
+}

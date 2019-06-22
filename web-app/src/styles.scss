@@ -1,0 +1,17 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* You can add global styles to this file, and also import other style files */
+div[ng-view]{
+  height: 100%;
+}
+
+html, body {
+  position: relative;
+  height: 100% !important;
+  padding: 0;
+  margin:0
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+

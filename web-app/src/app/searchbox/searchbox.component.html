@@ -1,0 +1,8 @@
+
+<form #f="ngForm" role="search" (ngSubmit)="onSubmit(f)" novalidate>
+  <div class="input-group">
+    <input class="form-control" placeholder=" Search Company" name="srch-term" id="ed-srch-term" type="text" [(ngModel)]='listFilter'/>
+    <button type="submit" style="display:none">hidden submit</button>
+  </div>
+</form>
+
