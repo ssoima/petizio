@@ -31,24 +31,24 @@
 /* global getAssetRegistry getParticipantRegistry */
 
 /**
- * @param {org.petizio.petition.CreateSampleData} createSampleData
+ * @param {org.petizio.com.CreateSampleData} createSampleData
  * @transaction
  */
 async function createSampleData(){
     factory = getFactory();
 
-    petitionerAR = await getParticipantRegistry("org.petizio.petition.Petitioner");
-    petitioner = factory.newResource("org.petizio.petition", "Petitioner", "xyz");
+    petitionerAR = await getParticipantRegistry("org.petizio.com.Petitioner");
+    petitioner = factory.newResource("org.petizio.com", "Petitioner", "xyz");
     petitionerAR.add(petitioner);
 
     for(var i=0; i<3; i++){
-        voterAR = await getParticipantRegistry("org.petizio.petition.Voter");
-        voter = factory.newResource("org.petizio.petition", "Voter", "abc"+i);
+        voterAR = await getParticipantRegistry("org.petizio.com.Voter");
+        voter = factory.newResource("org.petizio.com", "Voter", "abc"+i);
         voterAR.add(voter);
     }
 
-    petitionAR = await getAssetRegistry("org.petizio.petition.Petition");
-    petition = factory.newResource("org.petizio.petition", "Petition", "abc");
+    petitionAR = await getAssetRegistry("org.petizio.com.Petition");
+    petition = factory.newResource("org.petizio.com", "Petition", "abc");
     petition.description = "Test";
     petition.title = "Title";
     petition.owner = petitioner;
@@ -56,7 +56,7 @@ async function createSampleData(){
 }
 
 /**
- * @param {org.petizio.petition.VoteForPetition} voteForPetition
+ * @param {org.petizio.com.VoteForPetition} voteForPetition
  * @transaction
  */
 async function voteForPetition(voteForPetition) {
@@ -65,13 +65,13 @@ async function voteForPetition(voteForPetition) {
     const newVoteId = petition.getIdentifier() + voter.getIdentifier();
 
     factory = getFactory();
-    const newVote = factory.newResource("org.petizio.petition", "Vote", newVoteId);
-    voteAssetRegistry = await getAssetRegistry("org.petizio.petition.Vote");
+    const newVote = factory.newResource("org.petizio.com", "Vote", newVoteId);
+    voteAssetRegistry = await getAssetRegistry("org.petizio.com.Vote");
     voteAssetRegistry.add(newVote);
 
     newVote.owner = voter;
     petition.votes.push(newVote);
-    assetRegistry = await getAssetRegistry("org.petizio.petition.Petition");
+    assetRegistry = await getAssetRegistry("org.petizio.com.Petition");
     assetRegistry.update(petition);
 
 }

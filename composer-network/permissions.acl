@@ -15,17 +15,17 @@
 
 rule Voter {
   description: "Allow the voter full access"
-  participant: "org.petizio.petition.Voter"
+  participant: "org.petizio.com.Voter"
   operation: ALL
-  resource: "org.petizio.petition.Petition"
+  resource: "org.petizio.com.Petition"
   action: ALLOW
 }
 
 rule Petitioner {
   description: "Allow the petitioner full access"
-  participant(owner): "org.petizio.petition.Petitioner"
+  participant(owner): "org.petizio.com.Petitioner"
   operation: ALL
-  resource(p): "org.petizio.petition.Petition"
+  resource(p): "org.petizio.com.Petition"
   condition: (p.owner.getIdentifier() == owner.getIdentifier())
   action: ALLOW
 }
