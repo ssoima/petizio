@@ -18,21 +18,28 @@ export class Petition {
 
 export class Signature{
     id: number; //asset ID of the Signature
+/*
     name: string;
+*/
     release: Date;
     checksum: string;
     ownerId: string; // id of the petition that owns the signature
     signerId: string; // signer's id
+    signerKey: string; // signer's private key
+
   created: boolean;
     hasBusinessRelation: boolean;
-    constructor (id, name, release, checksum, ownerId, signerId, created, hasBusinessRelation){
+    constructor (id, name, release, checksum, ownerId, signerId, signerKey, created, hasBusinessRelation){
         this.id = id;
+/*
         this.name = name;
+*/
         this.release = release;
         this.checksum = checksum;
         this.ownerId = ownerId; //ownerpubkey
         this.signerId = signerId; //signerpubkey
-	this.created = created;
+        this.signerKey = signerKey; //signerpubkey
+      this.created = created;
 	this.hasBusinessRelation = hasBusinessRelation;
     }
 }

@@ -22,17 +22,18 @@ export class PetitionProfileSignComponent implements OnInit {
   @Input() petition: Petition;
   rating: number;
   showComment: boolean;
+  created : false;
   questionComment: string; //holds the vaule of the new comment
   public mark: number; //holds the value of the new mark/rating for the current signature
   comments: any[] = [];
   demoRating: any = {
     checksum: 265, 
     rating: 4, 
-    comments: [
+/*    comments: [
       {comment:"comment1", mark: 1},
       {comment:"comment2", mark: 2},
       {comment:"comment4", mark: 4}
-    ]
+    ]*/
   }
   
   constructor(private _router: Router, private _DataService: DataService) {

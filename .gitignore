@@ -1,3 +1,5 @@
 .idea
 node_modules/*
 composer-network/*.bna
+composer-network/dist/*
+composer-network/node_modules/*
