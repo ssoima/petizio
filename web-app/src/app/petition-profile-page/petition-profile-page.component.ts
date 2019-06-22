@@ -28,7 +28,7 @@ export class PetitionProfilePageComponent implements OnInit {
     var param = this._route.snapshot.paramMap.get('id');
     if (param) {
       var id = param;
-      this.getCompany(id);
+      this.getPetition(id);
     }
 
   }
@@ -39,10 +39,10 @@ export class PetitionProfilePageComponent implements OnInit {
   
   input: Petition's id
   */
-  getCompany(id: string) {
-    this._DataService.getCompanyAPI(id).subscribe((data: JSON)=> {
+  getPetition(id: string) {
+    this._DataService.getPetitionAPI(id).subscribe((data: JSON)=> {
       if (!data['error']){
-      this.petition = new Petition(data['id'],data['name'],data['description'],data['logo'], data['ownerPubKey'], data['businessRelation']);
+      this.petition = new Petition(data['id'],data['name'],data['description'],data['logo'], data['numberSignatures']);
 
       }
     });

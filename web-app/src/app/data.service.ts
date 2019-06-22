@@ -36,7 +36,7 @@ export class DataService {
     return this.http.get<any>("http://my-json-server.typicode.com/srozov/petizio-ui/petitions/");
   }
 
-  getCompanyAPI(id){
+  getPetitionAPI(id){
      return this.http.get<JSON>(this.restAPIURL + "/api/v0/assets/petition/"+id);
   }
 
