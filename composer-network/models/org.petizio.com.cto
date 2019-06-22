@@ -15,7 +15,7 @@
 /**
  * Defines a data model for a blind vehicle auction
  */
-namespace org.petizio.petition
+namespace org.petizio.com
 
 asset Vote identified by voteId {
 	o String voteId
