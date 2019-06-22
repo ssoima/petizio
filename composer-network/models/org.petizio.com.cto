@@ -25,6 +25,7 @@ asset Vote identified by voteId {
 asset Petition identified by petitionId {
 	o String petitionId
     o String description
+    o String title
     --> Petitioner owner
     --> Vote[] votes
 }
@@ -52,4 +53,8 @@ transaction VoteForPetition {
 
 transaction RevokeVoteForPetition {
 	--> Petition petition
+}
+
+transaction CreateSampleData {
+
 }
