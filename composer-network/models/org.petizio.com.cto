@@ -13,30 +13,43 @@
  */
 
 /**
- * Write your model definitions here
+ * Defines a data model for a blind vehicle auction
  */
+namespace org.petizio.petition
 
-namespace org.petizio.com
-
-participant SampleParticipant identified by participantId {
-  o String participantId
-  o String firstName
-  o String lastName
+asset Vote identified by voteId {
+	o String voteId
+    --> Voter owner
 }
 
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> SampleParticipant owner
-  o String value
+asset Petition identified by petitionId {
+	o String petitionId
+    o String description
+    --> Petitioner owner
+    --> Vote[] votes
 }
 
-transaction SampleTransaction {
-  --> SampleAsset asset
-  o String newValue
+abstract participant Person identified by personId {
+	o String personId
 }
 
-event SampleEvent {
-  --> SampleAsset asset
-  o String oldValue
-  o String newValue
+participant Voter extends Person {
+}
+
+participant Petitioner extends Person {
+}
+
+transaction CreatePetition {
+  o String title
+  o String description
+  --> Petitioner petitioner
+}
+
+transaction VoteForPetition {
+  --> Petition petition
+  --> Voter voter
+}
+
+transaction RevokeVoteForPetition {
+	--> Petition petition
 }
