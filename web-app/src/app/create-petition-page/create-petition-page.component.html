@@ -1,0 +1,94 @@
+<div class="content">
+
+  <div>
+    <h3>Create Your Own Petition</h3>
+  </div>
+
+  <hr>
+
+  <strong>Proposal</strong>
+
+  <!--
+    <div class="card">
+  -->
+  <div>
+    <div>
+      <!--
+            <form *ngIf="!signature.created" >
+      -->
+      <form>
+        <div class="form-group">
+          <label for="petition_title">Title</label>
+          <input type="text" class="form-control" id="petition_title" aria-describedby="petition_title" placeholder="In one sentence"
+                 [(ngModel)]="petition.title" name="petition_title">
+        </div>
+        <div class="form-group">
+          <label for="petition_description1">Short Description</label>
+          <textarea type="textbox" class="form-control" rows="5" id="petition_description1" placeholder="Short Description"
+                    [(ngModel)]="petition.description1" name="petition_description1">
+          </textarea>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="petition_description2">Detailed Description</label>
+          <textarea type="textbox" class="form-control" rows="5" id="petition_description2" placeholder="Detailed Description"
+                    [(ngModel)]="petition.description2" name="petition_description2">
+          </textarea>
+        </div>
+        <br>
+      </form>
+
+
+  <strong>Identification</strong>
+
+<!--
+  <div class="card">
+-->
+    <div>
+      <div>
+        <!--
+              <form *ngIf="!signature.created" >
+        -->
+        <form>
+          <div class="form-group">
+            <label for="example_eID">Your Personal eID</label>
+            <input disabled="disabled" type="text" class="form-control" id="example_eID" aria-describedby="eID_Help" placeholder="{{petitioner}}"
+                   [(ngModel)]="petition.owner" name="petition_owner" value={{petitioner}}>
+          </div>
+<!--          <div class="form-group">
+            <label for="example_Key">Your Private Key</label>
+            <input type="password" class="form-control" id="example_Key" placeholder="xxxxxxx7777777">
+          </div>-->
+          <label for="FormControlSelect">Category</label>
+          <select class="form-control" id="FormControlSelect">
+            <option>Culture</option>
+            <option>Social</option>
+            <option>Cantonal</option>
+            <option>Federal</option>
+            <option>Foreign</option>
+          </select>
+          <br>
+          <button  type="button" class="btn btn-success btn-s" (click)="submitPetition()">
+            Sign
+          </button>
+        </form>
+
+
+<!--        <button *ngIf= "signature.created" type="button" class="btn btn-primary">
+          Signed!
+        </button>-->
+      </div>
+      <div class="rating" style="display: flex; flex-direction: row-reverse" value ="getPetitionRating()">
+        <!--
+              <petizio-star-rating *ngIf="signature.hasBusinessRelation" [auditChecksum]= "signature.checksum" [comment] = "questionComment" [starsCount] = "rating" [readonly] = "false"></petizio-star-rating>
+        -->
+
+      </div>
+    </div>
+  <!--</div>-->
+
+
+
+
+
+</div>

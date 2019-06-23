@@ -16,7 +16,7 @@ The main/petitions page component
 export class PetitionsPageComponent implements OnInit {
  
   errorMessage: string;
-  
+
   public listFilter: string;
 
   /*
@@ -46,20 +46,30 @@ export class PetitionsPageComponent implements OnInit {
   performFilter(filterBy: string): Petition[] {
       filterBy = filterBy.toLocaleLowerCase();
       return this.petitions.filter((petition: Petition) =>
-      petition.name.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      petition.title.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
-
 
   /*
   initializing function.
   petitions are retrieved here
   */
   ngOnInit(): void {
+
    
     //retrieving all the petitions from rest_api then displaying them
     this._DataService.getPetitionsAPI().subscribe((petitionsList: any ) => {
+      console.log(petitionsList);
       for (let petition of petitionsList){
-          this.petitions.push(new Petition(petition.id, petition.name, petition.description1, petition.description2, petition.logo, petition.numberSignatures));
+        console.log(petition);
+          var p = new Petition();
+          // id, title, description1,description2, logo, numberSignatures
+        let nSignatures = 0;
+        if(petition.votes)
+          nSignatures = petition.votes.length;
+        let logo = "";
+          p.populate(petition.petitionId, petition.title, petition.descriptionShort,
+            petition.descriptionLong, nSignatures, logo);
+          this.petitions.push(p);
         }
         this.filteredPetitions = this.petitions;
     
