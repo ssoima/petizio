@@ -3,7 +3,7 @@
 
 
 
-<div class="card">
+<div class="card" (click)="goToPetition(petition.id)" style="role:button">
 <!--
   <div class="max-w-6xl mx-auto px-2">
 -->
@@ -11,7 +11,7 @@
       <img class="bg-cover bg-bottom" style="background-size: cover;" src={{petition.logo}}>
       <div class="col">
         <div class="p-1 md:p-1">
-          <p class="font-bold text-md md:text-2md">{{petition.name}}</p>
+          <p class="font-bold text-md md:text-2md">{{petition.title}}</p>
           <p class="text-gray-700 md:text-md"></p>
         </div>
         <div class="text-gray-600 text-sm md:text-base info-box">{{petition.description1}}</div>

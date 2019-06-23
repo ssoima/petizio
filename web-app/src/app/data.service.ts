@@ -4,6 +4,10 @@ import { Petition, Signature } from './org.petiziochain';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { map} from 'rxjs/operators';
+import {randomBytes} from "crypto";
+/*
+import {getRandomString} from "selenium-webdriver/safari";
+*/
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +18,7 @@ import { map} from 'rxjs/operators';
 */
 export class DataService {
 
-  restAPIURL:string = "http://127.0.0.1:"+ environment.restAPIport;
+  restAPIURL:string = "http://ec2-52-201-249-133.compute-1.amazonaws.com:3000/api/";
   companies: Petition[];
   public ids: String[] = [];
 
@@ -27,9 +31,19 @@ export class DataService {
   }
 
 
+  getPetitionersAPI(){
+
+    return this.http.get<any>(this.restAPIURL + "Petitioner");
+  }
+
+  getVotersAPI(){
+
+    return this.http.get<any>(this.restAPIURL + "Voter");
+  }
+
   getPetitionsAPI(){
 
-    return this.http.get<any>("http://52.201.249.133:3000/api/Petition/");
+    return this.http.get<any>(this.restAPIURL + "Petition");
 
 /*
     return this.http.get<any>("http://my-json-server.typicode.com/srozov/petizio-ui/petitions/");
@@ -38,7 +52,7 @@ export class DataService {
 
   getPetitionAPI(id){
 
-     return this.http.get<JSON>("http://52.201.249.133:3000/api/Petition/"+id);
+     return this.http.get<JSON>(this.restAPIURL + "Petition/" +id);
 
 /*
     return this.http.get<any>("http://my-json-server.typicode.com/srozov/petizio-ui/petitions/"+id);
@@ -73,4 +87,32 @@ export class DataService {
 
     );
   }
+
+  getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  submitPetitionAPI(title, description1, description2, eID){
+    return this.http.post<JSON>(this.restAPIURL + "CreatePetition",  {
+      "$class": "org.petizio.com.CreatePetition",
+      "petitionId": this.getRandomInt(0,25466572),
+      "title": title,
+      "descriptionShort": description1,
+      "descriptionLong": description2,
+      "ownerId": eID,
+    })
+      .subscribe(
+        (data:any) => {
+          console.log(data);
+          return data;
+        }
+
+      );
+  }
+
+
+
+
 }
