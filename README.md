@@ -29,15 +29,18 @@ The entry process to the blockchain is depicted below.
 </figure> 
 
 
-The architecture explanation
+The development of the project was done as follow;
+* A github repository was used to coordinate.
+* The repository was then moved into AWS CodeCommit
+* Something
 <figure align="center">
   <img src="https://github.com/ssoima/petizio/blob/master/web-app/src/assets/TechnicalArchitecture.png" alt="not found" style="width:100%">
 </figure> 
 
 
 
-One vote is one vote: The confirmation method prevents a single agent to vote multiple times.  
-Immutability: Nobody can tamper with votes once they have been written to the blockchain.  
-Anonymity: When the issues are being voted for, it is not known who supports the ideas, people can vote without revealing their identity.  
+* One vote is one vote: The confirmation method prevents a single agent to vote multiple times.  
+* Immutability: Nobody can tamper with votes once they have been written to the blockchain.  
+* Anonymity: When the issues are being voted for, it is not known who supports the ideas, people can vote without revealing their identity.  
   
-Finally, petitions create a low-risk, high-reward environment that allows the general public to familiarize themselves with the idea of blockchain in governmental processes. This allows the dissemination of technology and creates the building blocks of a e-voting system.
+The most important part is thatpetitions create a low-risk, high-reward environment that allows the general public to familiarize themselves with the idea of blockchain in governmental processes. This allows the dissemination of technology and creates the building blocks for a e-voting system.
