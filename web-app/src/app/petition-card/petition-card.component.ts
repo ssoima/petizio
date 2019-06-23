@@ -22,4 +22,8 @@ export class PetitionCardComponent implements OnInit {
 
   }
 
+  goToPetition(id) {
+    this._router.navigateByUrl('/petition/' + id);
+  }
+
 }
