@@ -3,7 +3,7 @@
 ## Abstract
 Petizio is a petition creating and voting app that allows users to vote pseudo-anonymously after veryfing themselves through government identification. Citizens can then create new petitions and vote through the app without the need of exposing their identity.  
 
-## 1. Problem Description
+## Problem Description
 
 Currently there are three approaches to gathering signatures for petitions;
 
@@ -13,7 +13,7 @@ Currently there are three approaches to gathering signatures for petitions;
 
 None of these solutions have an identity verification nor provide anonimty for citizens.
 
-## 2. Solution
+## Solution
 
 Our solution is to use governmental facilities to verify the citizens and register on a private blockchain. Verified citizens can then create and vote on petitions on the blockchain  
 
