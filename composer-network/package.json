@@ -3,7 +3,11 @@
     "composer": "^0.20.8"
   },
   "name": "petizio",
+<<<<<<< HEAD
   "version": "0.0.2",
+=======
+  "version": "0.0.3",
+>>>>>>> 105ad3db69289d8fea597f14447db6ba02081eb9
   "description": "petizio bna",
   "scripts": {
     "cleanupDocker": "./../../../fabric-dev-servers/teardownAllDocker.sh",
