@@ -9,9 +9,9 @@ Currently there are three approaches to gathering signatures for petitions;
 
 * **Physical:** Physical petitions make it hard to reach a large audience 
 * **Private Entities:** Websites such as [change.org](https://www.change.org) digitizes the process of voting and allows users to gather votes and make their issues heard. But the lack of identification creates the problem of a single person signing the petition multiple times.
-* **State Owned Websites:** There are solutions provided by the state such as in [Germany](https://epetitionen.bundestag.de/) overcomes the problem of identification of citizens, however they are still vulnerable to attacks and they do not 
+* **State Owned Websites:** There are solutions provided by the state such as in [Germany](https://epetitionen.bundestag.de/) overcomes the problem of identification of citizens, however they are still vulnerable to attacks and they do not provide full anonymity.
 
-None of these solutions have an identity verification nor provide anonimty for citizens.
+None of these solutions have an identity verification nor provide anonymity for citizens.
 
 ## Solution
 
