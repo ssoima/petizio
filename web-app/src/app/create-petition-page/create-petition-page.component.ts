@@ -17,7 +17,6 @@ export class CreatePetitionPageComponent implements OnInit {
   certificates: Certificate[] = [];
   userName = environment.userName;
   petitioner = "";
-  votersList;
 
   constructor(private _route: ActivatedRoute,
               private _router: Router, private _DataService: DataService, public dialog: MatDialog) {
@@ -45,12 +44,7 @@ export class CreatePetitionPageComponent implements OnInit {
 
     this._DataService.getPetitionersAPI().subscribe((petitionersList: any) => {
       this.petitioner = petitionersList[0]['personId'];  });
-    this._DataService.getVotersAPI().subscribe((list: any) => {
-      this.votersList = [];
-      for (var i = 0; i < list.length; i++) {
-        this.votersList.push(list[i]['personId']);
-      }
-    });
+
 
 
     /*
