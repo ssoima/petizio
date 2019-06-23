@@ -38,20 +38,41 @@ async function createSampleData(){
     factory = getFactory();
 
     petitionerAR = await getParticipantRegistry("org.petizio.com.Petitioner");
-    petitioner = factory.newResource("org.petizio.com", "Petitioner", "xyz");
+    petitioner = factory.newResource("org.petizio.com", "Petitioner", "12092183d029843241");
     petitionerAR.add(petitioner);
 
     for(var i=0; i<3; i++){
         voterAR = await getParticipantRegistry("org.petizio.com.Voter");
-        voter = factory.newResource("org.petizio.com", "Voter", "abc"+i);
+        voter = factory.newResource("org.petizio.com", "Voter", "123218a0009"+i);
         voterAR.add(voter);
     }
 
     petitionAR = await getAssetRegistry("org.petizio.com.Petition");
-    petition = factory.newResource("org.petizio.com", "Petition", "abc");
-    petition.description = "Test";
-    petition.title = "Title";
+    petition = factory.newResource("org.petizio.com", "Petition", "2314fsdaf32098");
+
+    petition.descriptionShort = "ShortDescr";
+    petition.descriptionLong = "LOOOOOOOOONG";
+    petition.title = "Best Petition everrr";
     petition.owner = petitioner;
+
+    petitionAR.add(petition);
+}
+/**
+ * @param {org.petizio.com.CreatePetition} createPetition
+ * @transaction
+ */
+async function createPetition(tx){
+    petitionAR = await getAssetRegistry("org.petizio.com.Petition");
+    petition = getFactory().newResource("org.petizio.com", "Petition", tx.petitionId);
+
+    petition.descriptionShort = tx.descriptionShort;
+    petition.descriptionLong = tx.descriptionLong;
+    petition.title = tx.title;
+
+    petitionerAR = await getParticipantRegistry("org.petizio.com.Petitioner");
+    owner = petitionerAR.get(tx.owner);
+    petition.owner = tx.owner;
+
     petitionAR.add(petition);
 }
 
@@ -73,32 +94,4 @@ async function voteForPetition(voteForPetition) {
     petition.votes.push(newVote);
     assetRegistry = await getAssetRegistry("org.petizio.com.Petition");
     assetRegistry.update(petition);
-
 }
-
-
-
-// /**
-//  * Sample transaction
-//  * @param {org.petizio.com.SampleTransaction} sampleTransaction
-//  * @transaction
-//  */
-// async function sampleTransaction(tx) {
-//     // Save the old value of the asset.
-//     const oldValue = tx.asset.value;
-//
-//     // Update the asset with the new value.
-//     tx.asset.value = tx.newValue;
-//
-//     // Get the asset registry for the asset.
-//     const assetRegistry = await getAssetRegistry('org.petizio.com.SampleAsset');
-//     // Update the asset in the asset registry.
-//     await assetRegistry.update(tx.asset);
-//
-//     // Emit an event for the modified asset.
-//     let event = getFactory().newEvent('org.petizio.com', 'SampleEvent');
-//     event.asset = tx.asset;
-//     event.oldValue = oldValue;
-//     event.newValue = tx.newValue;
-//     emit(event);
-// }
