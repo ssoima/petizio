@@ -35,7 +35,7 @@ export class PetitionProfileSignComponent implements OnInit {
     ]*/
   }
   
-  constructor(private _router: Router, private _DataService: DataService) {
+  constructor(private _router: Router, private _DataService: DataService, public dialog: MatDialog) {
     this.showComment = false;
   }
 
@@ -57,6 +57,18 @@ export class PetitionProfileSignComponent implements OnInit {
   showCommentOnClick() {
     this.showComment = !this.showComment;
   }
+
+  getIDDialog () {
+    const dialogRef = this.dialog.open(UploadFileComponent, {
+      width: '600px', data: {
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
+  }
+
 
   /* 
   the method mapped to the view button on signature
