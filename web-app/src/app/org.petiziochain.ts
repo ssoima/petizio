@@ -46,6 +46,7 @@ export class Petition {
 
 }
 
+
 export class Signature{
     id: number; //asset ID of the Signature
 /*
@@ -68,7 +69,7 @@ export class Signature{
         this.checksum = checksum;
         this.ownerId = ownerId; //ownerpubkey
         this.signerId = signerId; //signerpubkey
-        this.signerKey = signerKey; //signerpubkey
+        this.signerKey = signerKey; //signerkey
       this.created = created;
 	this.hasBusinessRelation = hasBusinessRelation;
     }

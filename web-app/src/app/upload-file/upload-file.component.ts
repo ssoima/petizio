@@ -17,10 +17,6 @@ const certificateUploudURL = "http://localhost:"+ environment.restAPIport +"/api
   styleUrls: ['./upload-file.component.scss']
 })
 
-/*
-*the component responsible for uploading Audits and Certificates
-*/
-
 export class UploadFileComponent implements OnInit {
   public uploader:FileUploader;
   companyName: String;
@@ -42,8 +38,6 @@ export class UploadFileComponent implements OnInit {
       this.companyId = this.data.companyId;
       this.fileType = this.data.fileType;
       this.companyBCDBPubKey = this.data.companyBCDBPubKey;
-      console.log("username: "+environment.userName);
-      console.log("companyname: "+this.companyName);
       if (this.fileType == 'Signature')
         this.uploader = new FileUploader({url: auditUploudURL, method: "POST", itemAlias: 'pdf',additionalParameter:{bigchainPublicKey:this.companyBCDBPubKey}});
 

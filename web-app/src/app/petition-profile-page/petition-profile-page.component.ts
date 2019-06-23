@@ -35,8 +35,6 @@ export class PetitionProfilePageComponent implements OnInit {
 
   /*
   retrieves the petition by the id
-  retrieves all the audits and certificates for the found petition
-  
   input: Petition's id
   */
   getPetition(id: string) {
