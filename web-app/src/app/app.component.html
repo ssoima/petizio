@@ -1,9 +1,12 @@
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.1/tailwind.min.css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <!--The content below is only a placeholder and can be replaced.-->
 <!--
 <input type="image" id="back-button" (click) = "goBack()" class = "back_button" src="../assets/back-button.png"/>
 -->
 
-  <nav class="header navbar navbar-expand-md navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a href="/"><img class="logo navbar-brand" src="../assets/logopetizio.png"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
@@ -12,10 +15,13 @@
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar7">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="//codeply.com">Codeply</a>
+          <a class="nav-link" role="button" (click) = "goBack()">Back</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="">Start Petition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
         </li>
       </ul>
     </div>
