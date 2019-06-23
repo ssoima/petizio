@@ -40,9 +40,6 @@ participant Voter extends Person {
 
 participant Petitioner extends Person {
 }
-asset Test identified by testId {
-  o String testId
-}
 
 transaction CreatePetition {
   o String petitionId
@@ -58,6 +55,7 @@ transaction VoteForPetition {
 }
 
 transaction RevokeVoteForPetition {
+  	--> Voter voter
 	--> Petition petition
 }
 
