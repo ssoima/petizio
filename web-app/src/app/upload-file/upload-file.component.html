@@ -1,12 +1,7 @@
-    <h1 mat-dialog-title>File Upload</h1>
+    <h1 mat-dialog-title>How to get a pseudoID</h1>
     
     <mat-dialog-content style="margin-left: auto; margin-right: auto; margin-top: 40px">
-    <!-- File input for the file-upload plugin, with special ng2-file-upload directive called ng2FileSelect -->
-    <input type="file" name="pdf" ng2FileSelect [uploader]="uploader" />
-    <!-- button to trigger the file upload when submitted -->
-    <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-          Upload
-    </button>
+      <img class="logo navbar-brand" src="../assets/pseudoID.png">
   </mat-dialog-content>
   <mat-dialog-actions style="margin-top: 100px; align-content: center">
       <button mat-button mat-dialog-close style="margin: auto">Close</button>

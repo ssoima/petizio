@@ -46,7 +46,7 @@ export class PetitionsPageComponent implements OnInit {
   performFilter(filterBy: string): Petition[] {
       filterBy = filterBy.toLocaleLowerCase();
       return this.petitions.filter((petition: Petition) =>
-      petition.name.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      petition.title.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
 
@@ -59,7 +59,9 @@ export class PetitionsPageComponent implements OnInit {
     //retrieving all the petitions from rest_api then displaying them
     this._DataService.getPetitionsAPI().subscribe((petitionsList: any ) => {
       for (let petition of petitionsList){
+/*
           this.petitions.push(new Petition(petition.id, petition.name, petition.description1, petition.description2, petition.logo, petition.numberSignatures));
+*/
         }
         this.filteredPetitions = this.petitions;
     

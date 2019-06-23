@@ -1,22 +1,28 @@
 export class Petition {
     id: string; //the ownerPubKey key thing
-    name: string;
+    owner : string;
+    title: string;
     description1: string;
     description2: string;
   logo: string; //pathfornow
     numberSignatures: string;
+/*
+  constructor (id, title, description1,description2, logo, numberSignatures){
+    this.id = id;
+    this.title = title;
+    this.description1 = description1;
+    this.description2 = description2;
 
-    constructor (id, name, description1,description2, logo, numberSignatures){
-        this.id = id;
-        this.name = name;
-        this.description1 = description1;
-        this.description2 = description2;
-
-      this.logo = logo;
-        this.numberSignatures = numberSignatures;
+    this.logo = logo;
+    this.numberSignatures = numberSignatures;
 
 
-    }
+  }*/
+  constructor (){
+
+
+  }
+
 }
 
 export class Signature{
@@ -32,7 +38,7 @@ export class Signature{
 
   created: boolean;
     hasBusinessRelation: boolean;
-    constructor (id, name, release, checksum, ownerId, signerId, signerKey, created, hasBusinessRelation){
+    constructor (id, title, release, checksum, ownerId, signerId, signerKey, created, hasBusinessRelation){
         this.id = id;
 /*
         this.name = name;
