@@ -4,10 +4,13 @@
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
   width: 80%;
+  /*
   height: 200px;
+  */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  height: 200px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -22,10 +25,40 @@
 
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
-  border-radius: 5px 5px 0 0;
-  padding: 10px 10px 10px 25px;
-  width: 180px;
-  height: 180px;
+/*  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 10px 25px;*/
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
+
+}
+
+.info-box{
+  overflow:hidden;
+  height: 3em;
+  width: 300px;
+  font-size: 1em;
+  line-height: 1em;
+  padding-right:20px;
+}
+
+.info-box span{
+  position:relative;
+  top:31px;
+  left:297px;
+  display:inline-block;
+}
+
+
+
+.description{
+  height: 80px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  /*
+  white-space: pre-wrap;
+  */
+  overflow: hidden;
 }
 
 a {

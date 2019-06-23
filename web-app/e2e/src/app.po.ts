@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('auditchain-root h1')).getText();
+    return element(by.css('petiziochain-root h1')).getText();
   }
 }

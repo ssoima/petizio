@@ -1,4 +1,5 @@
 <petizio-searchbox></petizio-searchbox>
+<br>
 <div *ngIf='petitions && petitions.length'>
     <petizio-petition-card *ngFor='let petition of filteredPetitions' [petition]="petition"></petizio-petition-card>
 </div>
