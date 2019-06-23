@@ -13,10 +13,10 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./create-petition-page.component.scss', '../w3.scss']
 })
 export class CreatePetitionPageComponent implements OnInit {
-  petition: Petition;
+  petition: Petition = new Petition();
   certificates: Certificate[] = [];
   userName = environment.userName;
-  petitionersList;
+  petitioner = "";
   votersList;
 
   constructor(private _route: ActivatedRoute,
@@ -25,11 +25,10 @@ export class CreatePetitionPageComponent implements OnInit {
   }
 
 
-  submitPetition(title, description1, description2, eID) {
+  submitPetition() {
     console.log(this.petition);
-/*
-    this._DataService.submitPetitionAPI(title, description1, description2, eID);
-*/
+    this._DataService.submitPetitionAPI(this.petition.title, this.petition.description1,
+      this.petition.description2, this.petitioner);
   }
 
 
@@ -45,22 +44,12 @@ export class CreatePetitionPageComponent implements OnInit {
         }*/
 
     this._DataService.getPetitionersAPI().subscribe((petitionersList: any) => {
-      this.petitionersList = [];
-      for (var i = 0; i < petitionersList.length; i++) {
-        this.petitionersList.push(petitionersList[i]['personId']);
-      }
-
-
-      console.log(this.petitionersList);
-    });
+      this.petitioner = petitionersList[0]['personId'];  });
     this._DataService.getVotersAPI().subscribe((list: any) => {
       this.votersList = [];
       for (var i = 0; i < list.length; i++) {
         this.votersList.push(list[i]['personId']);
       }
-
-
-      console.log(this.votersList);
     });
 
 
