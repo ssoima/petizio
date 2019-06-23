@@ -19,6 +19,14 @@ Our solution is to use governmental facilities to verify the citizens and regist
 
 <figure align="center">
   <img src="https://github.com/ssoima/petizio/blob/master/web-app/src/assets/Solution_Explanation.png" alt="not found" style="width:100%">
+   <figcaption>Fig.1: Solution Overview.</figcaption>
+</figure> 
+
+
+The Petizio app is writen using Angular.js and
+<figure align="center">
+  <img src="https://github.com/ssoima/petizio/blob/master/web-app/src/assets/TechnicalArchitecture.png" alt="not found" style="width:100%">
+   <figcaption>Fig.2: Architecture Overview.</figcaption>
 </figure> 
 
 
