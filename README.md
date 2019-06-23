@@ -32,13 +32,16 @@ The entry process to the blockchain is depicted below.
 The development of the project was done as follow;
 * A github repository was used to coordinate.
 * The repository was then moved into AWS CodeCommit
-* Something
+* A Rest API and Composer was used in an EC2 instance
+* This EC2 instance was used between AWS Managed BlockChain and Angular.Js using REST:API.
+
+
 <figure align="center">
   <img src="https://github.com/ssoima/petizio/blob/master/web-app/src/assets/TechnicalArchitecture.png" alt="not found" style="width:100%">
 </figure> 
 
 
-
+To coclude Petizio offers three strengths;  
 * One vote is one vote: The confirmation method prevents a single agent to vote multiple times.  
 * Immutability: Nobody can tamper with votes once they have been written to the blockchain.  
 * Anonymity: When the issues are being voted for, it is not known who supports the ideas, people can vote without revealing their identity.  
