@@ -29,19 +29,20 @@ export class DataService {
 
   getPetitionsAPI(){
 
-/*
-    return this.http.get<any>(this.restAPIURL + "/api/v0/assets/petitions");
-*/
+    return this.http.get<any>("http://52.201.249.133:3000/api/Petition/");
 
+/*
     return this.http.get<any>("http://my-json-server.typicode.com/srozov/petizio-ui/petitions/");
+*/
   }
 
   getPetitionAPI(id){
-/*
-     return this.http.get<JSON>(this.restAPIURL + "/api/v0/assets/petition/"+id);
-*/
 
+     return this.http.get<JSON>("http://52.201.249.133:3000/api/Petition/"+id);
+
+/*
     return this.http.get<any>("http://my-json-server.typicode.com/srozov/petizio-ui/petitions/"+id);
+*/
 
 
   }
