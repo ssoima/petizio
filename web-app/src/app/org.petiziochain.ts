@@ -1,15 +1,18 @@
 export class Petition {
     id: string; //the ownerPubKey key thing
     name: string;
-    description: string;
-    logo: string; //pathfornow
+    description1: string;
+    description2: string;
+  logo: string; //pathfornow
     numberSignatures: string;
 
-    constructor (id, name, description, logo, numberSignatures){
+    constructor (id, name, description1,description2, logo, numberSignatures){
         this.id = id;
         this.name = name;
-        this.description = description;
-        this.logo = logo;
+        this.description1 = description1;
+        this.description2 = description2;
+
+      this.logo = logo;
         this.numberSignatures = numberSignatures;
 
 

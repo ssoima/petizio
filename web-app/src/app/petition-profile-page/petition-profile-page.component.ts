@@ -42,7 +42,7 @@ export class PetitionProfilePageComponent implements OnInit {
   getPetition(id: string) {
     this._DataService.getPetitionAPI(id).subscribe((data: JSON)=> {
       if (!data['error']){
-      this.petition = new Petition(data['id'],data['name'],data['description'],data['logo'], data['numberSignatures']);
+      this.petition = new Petition(data['id'],data['name'],data['description1'],data['description2'],data['logo'], data['numberSignatures']);
 
       }
     });
