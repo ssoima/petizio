@@ -24,7 +24,8 @@ asset Vote identified by voteId {
 
 asset Petition identified by petitionId {
 	o String petitionId
-    o String description
+    o String descriptionShort
+    o String descriptionLong
     o String title
     --> Petitioner owner
     --> Vote[] votes
