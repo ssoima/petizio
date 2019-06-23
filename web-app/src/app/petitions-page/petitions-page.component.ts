@@ -68,7 +68,7 @@ export class PetitionsPageComponent implements OnInit {
           nSignatures = petition.votes.length;
         let logo = "";
           p.populate(petition.petitionId, petition.title, petition.descriptionShort,
-            petition.descriptionLong, nSignatures, logo);
+            petition.descriptionLong, nSignatures);
           this.petitions.push(p);
         }
         this.filteredPetitions = this.petitions;

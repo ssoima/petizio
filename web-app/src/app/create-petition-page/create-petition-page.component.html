@@ -24,14 +24,13 @@
         </div>
         <div class="form-group">
           <label for="petition_description1">Short Description</label>
-          <textarea type="textbox" class="form-control" rows="5" id="petition_description1" placeholder="Short Description"
+          <input class="form-control" rows="5" id="petition_description1" placeholder="Short Description"
                     [(ngModel)]="petition.description1" name="petition_description1">
-          </textarea>
         </div>
         <br>
         <div class="form-group">
           <label for="petition_description2">Detailed Description</label>
-          <textarea type="textbox" class="form-control" rows="5" id="petition_description2" placeholder="Detailed Description"
+          <textarea type="textbox" class="form-control" rows="4" id="petition_description2" placeholder="Detailed Description"
                     [(ngModel)]="petition.description2" name="petition_description2">
           </textarea>
         </div>
@@ -68,9 +67,15 @@
             <option>Foreign</option>
           </select>
           <br>
+<!--
+          <a href="/" >
+-->
           <button  type="button" class="btn btn-success btn-s" (click)="submitPetition()">
             Sign
           </button>
+<!--
+          </a>
+-->
         </form>
 
 

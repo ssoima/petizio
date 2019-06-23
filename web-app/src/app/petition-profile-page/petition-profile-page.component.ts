@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { Petition } from '../org.petiziochain';
@@ -43,8 +43,7 @@ export class PetitionProfilePageComponent implements OnInit {
     this._DataService.getPetitionAPI(id).subscribe((data: JSON)=> {
       if (!data['error']){
         this.petition = new Petition();
-        console.log(data);
-        this.petition.populate(data['owner'],data['title'],data['descriptionShort'],data['descriptionLong'],data['logo'], data['numberSignatures']);
+        this.petition.populate(data['petitionId'],data['title'],data['descriptionShort'],data['descriptionLong'], data['numberSignatures']);
 
       }
     });

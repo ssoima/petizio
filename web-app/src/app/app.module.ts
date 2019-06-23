@@ -12,8 +12,8 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
 import { PetitionProfilePageComponent } from './petition-profile-page/petition-profile-page.component';
 import { PetitionProfileHeaderComponent } from './petition-profile-header/petition-profile-header.component';
 import { PetitionProfileSignComponent } from './petition-profile-sign/petition-profile-sign.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from './data.service';
 import { UploadFileComponent } from './upload-file/upload-file.component'
 import { FileSelectDirective, FileDropDirective, FileUploadModule } from 'ng2-file-upload';
