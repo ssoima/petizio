@@ -19,7 +19,7 @@ Our solution is to use governmental facilities to verify the citizens and regist
 
 
 <figure align="center">
-  <img src="web-app/src/assets/Solution_Explanation.jpg" alt="not found" style="width:100%">
+  <img src="/web-app/src/assets/Solution_Explanation.jpg" alt="not found" style="width:100%">
 </figure> 
 
 
