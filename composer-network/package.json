@@ -3,11 +3,7 @@
     "composer": "^0.20.8"
   },
   "name": "petizio",
-<<<<<<< HEAD
-  "version": "0.0.2",
-=======
   "version": "0.0.3",
->>>>>>> 105ad3db69289d8fea597f14447db6ba02081eb9
   "description": "petizio bna",
   "scripts": {
     "cleanupDocker": "./../../../fabric-dev-servers/teardownAllDocker.sh",
@@ -17,8 +13,9 @@
     "pretest": "npm run lint",
     "publish": "composer network install --card PeerAdmin@hlfv1 --archiveFile dist/petizio.bna",
     "importAdminCard": "composer card import --file dist/networkadmin.card -c admin@petizio",
-    "startNetworkWithAdmin": "composer network start --networkName petizio --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file dist/networkadmin.card",
-    "start": "npm run cleanupCards && npm run cleanupDocker && npm run startNewFabricSession && npm run prepublish && npm run publish && npm run startNetworkWithAdmin && npm run importAdminCard",
+    "startNetworkWithAdmin": "composer network start --networkName petizio --networkVersion $npm_package_version --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file dist/networkadmin.card",
+    "start": "npm run cleanupCards && npm run cleanupDocker && npm run startNewFabricSession && npm run prepublish && npm run publish && npm run startNetworkWithAdmin && npm run importAdminCard && npm run startRest",
+    "startRest": "composer-rest-server -c admin@petizio -n never -w true",
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"
   },
