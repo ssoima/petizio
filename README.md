@@ -14,19 +14,24 @@ None of these solutions have an identity verification nor provide anonymity for 
 
 ## Solution
 
-Our solution is to use governmental facilities to verify the citizens and register on a private blockchain. Verified citizens can then create and vote on petitions on the blockchain  
+Our solution is to use governmental facilities to verify the citizens and then register the verified citizens on a private blockchain. The citizens are given pseudo-anonymous IDs that can be identified by the government. Based on this premise;
 
+* The list of verified pseudoanonyms are publicly displayed on the blockchain,
+* Verified citizens can create and vote on petitions on the blockchain.
+* When a citizen votes they use their anonymized pseudo ID.
+* Petitioner can then compare the pseudo id published by the government and then count the votes.
+* The counting of the singatures, creation of signature, and petitions are handled by a smart contract.
+
+The entry process to the blockchain is depicted below.
 
 <figure align="center">
   <img src="https://github.com/ssoima/petizio/blob/master/web-app/src/assets/Solution_Explanation.png" alt="not found" style="width:100%">
-   <figcaption>Fig.1: Solution Overview.</figcaption>
 </figure> 
 
 
-The Petizio app is writen using Angular.js and
+The architecture explanation
 <figure align="center">
   <img src="https://github.com/ssoima/petizio/blob/master/web-app/src/assets/TechnicalArchitecture.png" alt="not found" style="width:100%">
-   <figcaption>Fig.2: Architecture Overview.</figcaption>
 </figure> 
 
 
