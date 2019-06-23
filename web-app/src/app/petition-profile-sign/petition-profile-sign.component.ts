@@ -44,6 +44,13 @@ export class PetitionProfileSignComponent implements OnInit {
   calls the giveSignatureAPI
   */
   giveSignature() {
+
+    let e = document.getElementById( "votes");
+    e.textContent = ""+(parseInt(e.textContent) + 1);
+
+    let elements = document.getElementsByClassName( "card");
+    elements[0].innerHTML = "<h3 class='mx-auto text-success'>You Signed!</h3>";
+
     this._DataService.giveSignatureAPI(this.signature.checksum, this.signature.signerId).subscribe((data: JSON) => {
       if (data['dev_message'] == "Success"){
         alert("Sign Petition request Sent");
