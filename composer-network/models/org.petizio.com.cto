@@ -27,8 +27,8 @@ asset Petition identified by petitionId {
     o String descriptionShort
     o String descriptionLong
     o String title
-    --> Petitioner owner
-    --> Vote[] votes
+    --> Petitioner owner optional
+    --> Vote[] votes optional
 }
 
 abstract participant Person identified by personId {
@@ -42,9 +42,11 @@ participant Petitioner extends Person {
 }
 
 transaction CreatePetition {
+  o String petitionId
   o String title
-  o String description
-  --> Petitioner petitioner
+  o String descriptionShort
+  o String descriptionLong
+  o String ownerId
 }
 
 transaction VoteForPetition {
