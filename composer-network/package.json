@@ -6,10 +6,15 @@
   "version": "0.0.1",
   "description": "petizio bna",
   "scripts": {
+    "cleanupDocker": "./../../../fabric-dev-servers/teardownAllDocker.sh",
+    "cleanupCards": "composer card delete -c PeerAdmin@hlfv1 && composer card delete -c admin@petizio || true",
+    "startNewFabricSession": "./../../../fabric-dev-servers/startFabric.sh && ./../../../fabric-dev-servers/createPeerAdminCard.sh",
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/petizio.bna",
     "pretest": "npm run lint",
     "publish": "composer network install --card PeerAdmin@hlfv1 --archiveFile dist/petizio.bna",
-
+    "importAdminCard": "composer card import --file dist/networkadmin.card -c admin@petizio",
+    "startNetworkWithAdmin": "composer network start --networkName petizio --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file dist/networkadmin.card",
+    "start": "npm run cleanupCards && npm run cleanupDocker && npm run startNewFabricSession && npm run prepublish && npm run publish && npm run startNetworkWithAdmin && npm run importAdminCard",
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"
   },

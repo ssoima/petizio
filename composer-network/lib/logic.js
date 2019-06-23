@@ -30,13 +30,50 @@
 
 /* global getAssetRegistry getParticipantRegistry */
 
+/**
+ * @param {org.petizio.com.CreateSampleData} createSampleData
+ * @transaction
+ */
+async function createSampleData(){
+    factory = getFactory();
+
+    petitionerAR = await getParticipantRegistry("org.petizio.com.Petitioner");
+    petitioner = factory.newResource("org.petizio.com", "Petitioner", "xyz");
+    petitionerAR.add(petitioner);
+
+    for(var i=0; i<3; i++){
+        voterAR = await getParticipantRegistry("org.petizio.com.Voter");
+        voter = factory.newResource("org.petizio.com", "Voter", "abc"+i);
+        voterAR.add(voter);
+    }
+
+    petitionAR = await getAssetRegistry("org.petizio.com.Petition");
+    petition = factory.newResource("org.petizio.com", "Petition", "abc");
+    petition.description = "Test";
+    petition.title = "Title";
+    petition.owner = petitioner;
+    petitionAR.add(petition);
+}
+
+/**
+ * @param {org.petizio.com.VoteForPetition} voteForPetition
+ * @transaction
+ */
 async function voteForPetition(voteForPetition) {
     const petition = voteForPetition.petition;
     const voter = voteForPetition.voter;
-    const newVote = getFactory().newAsset("org.petizio.petition", "Vote");
+    const newVoteId = petition.getIdentifier() + voter.getIdentifier();
+
+    factory = getFactory();
+    const newVote = factory.newResource("org.petizio.com", "Vote", newVoteId);
+    voteAssetRegistry = await getAssetRegistry("org.petizio.com.Vote");
+    voteAssetRegistry.add(newVote);
+
     newVote.owner = voter;
     petition.votes.push(newVote);
-    await assetRegistry.update(petition.votes);
+    assetRegistry = await getAssetRegistry("org.petizio.com.Petition");
+    assetRegistry.update(petition);
+
 }
 
 
