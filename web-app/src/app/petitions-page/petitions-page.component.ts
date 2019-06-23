@@ -46,7 +46,7 @@ export class PetitionsPageComponent implements OnInit {
   performFilter(filterBy: string): Petition[] {
       filterBy = filterBy.toLocaleLowerCase();
       return this.petitions.filter((petition: Petition) =>
-      petition.name.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      petition.title.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
 

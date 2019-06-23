@@ -8,23 +8,22 @@
 -->
       <form>
         <div class="form-group">
-          <label for="example_eID">Your Personal eID</label>
-          <input type="text" class="form-control" id="example_eID" aria-describedby="eID_Help" placeholder="eID77777XXXXX">
+          <label for="example_pseudoID">Your Personal pseudoID</label>
+
+
+          <button  type="button" class="btn float-right">
+            Don't have pseudoID?</button>
+
+          <input type="text" class="form-control" id="example_pseudoID" aria-describedby="pseudoID_Help" placeholder="pseudoIDID77777XXXXX">
         </div>
-        <br>
+<!--        <br>
         <div class="form-group">
           <label for="example_Key">Your Private Key</label>
           <input type="password" class="form-control" id="example_Key" placeholder="xxxxxxx7777777">
-        </div>
-        <br>
+        </div>-->
         <button  type="button" class="btn btn-success btn-s" (click)="giveSignature()">
           Sign</button>
       </form>
-
-
-      <button *ngIf= "signature.created" type="button" class="btn btn-primary">
-        Signed!
-      </button>
       </div>
     <div class="rating" style="display: flex; flex-direction: row-reverse" value ="getPetitionRating()">
 <!--

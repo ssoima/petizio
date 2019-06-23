@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Petition, Signature } from '../org.petiziochain';
 import { DataService } from '../data.service';
-import { Alert } from 'selenium-webdriver';
 import { Router } from '@angular/router';
 import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { MatDialog } from '@angular/material';
@@ -72,22 +71,7 @@ export class PetitionProfileSignComponent implements OnInit {
   retrieves the Rating and the comments for an signature
   */
 
-  getPetitionRating(){
-    this._DataService.getPetitionRatingAPI(this.signature.checksum).subscribe((data: JSON) => {
-      if(data['rating'] != null){
-        this.rating = data['rating'];
-      }
-      if(data['comments'] != null){
-        this.comments = data['comments'];
-      }
-      else
-        this.rating = 0;
-    });
-    if (this.rating == null || this.rating < 0)
-        this.rating = 0;
-  }
 
   ngOnInit() {
-    this.getPetitionRating();
   }
 }
